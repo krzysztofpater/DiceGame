@@ -1,0 +1,64 @@
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+  }
+  .player {
+    display: grid;
+    grid-template-columns: 2fr, 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 1rem;
+    justify-items: center;
+  }
+  .player--0 {
+    padding-bottom: 5rem;
+  }
+  .player--1 {
+    padding-top: 3rem;
+  }
+  .bottom {
+    display: block;
+    min-height: 30%;
+  }
+  .name {
+    font-size: 3rem;
+  }
+  .score {
+    font-size: 6rem;
+  }
+  .current {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    padding: 1rem;
+    width: 50%;
+  }
+  .current-label {
+    font-size: 1.5rem;
+  }
+  .current-score {
+    font-size: 3rem;
+  }
+  .dice {
+    height: 8rem;
+    top: 31%;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+    // top: -20rem;
+  }
+  .btn--new {
+    top: 72%;
+    transform: translateX(-50%) scale(0.7);
+  }
+  .btn--roll {
+    top: 85%;
+    left: 72%;
+    width: 40%;
+    height: 8rem;
+  }
+  .btn--hold {
+    top: 85%;
+    left: 28%;
+    width: 40%;
+    height: 8rem;
+  }
+}
