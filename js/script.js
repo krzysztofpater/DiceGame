@@ -13,6 +13,7 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnRules = document.querySelector('.btn--rules');
 
 let scores, currentScore, activePlayer, playing;
 
@@ -76,7 +77,7 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
 
-    //2. check if player''s score >= 100
+    //2. check if player's score >= 100
     if (scores[activePlayer] >= 100) {
       //Finish game
       playing = false;
@@ -92,6 +93,27 @@ btnHold.addEventListener('click', function () {
       switchPlayer();
     }
   }
+});
+
+//Rules
+const toggleRules = function () {
+  document.querySelector('.rules').classList.toggle('hidden');
+  document.querySelector('.rules__window').classList.toggle('hidden');
+};
+
+btnRules.addEventListener('click', toggleRules);
+
+document.querySelector('.rules').addEventListener('click', () => {
+  if (!document.querySelector('.rules').classList.contains('hidden')) {
+    toggleRules();
+  }
+});
+document.addEventListener('keydown', e => {
+  if (
+    e.key === 'Escape' &&
+    !document.querySelector('.rules').classList.contains('hidden')
+  )
+    toggleRules();
 });
 
 //New game
